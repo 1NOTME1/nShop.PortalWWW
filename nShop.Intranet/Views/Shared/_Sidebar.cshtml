@@ -1,0 +1,112 @@
+﻿<div class="d-flex flex-column p-3 bg-light" style="width: 280px; height: 100vh">
+    <!-- Usuń klasę "flex-shrink-0" -->
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">nShop</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                Strona główna
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Aktualnosc" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Aktualnosc
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Strona" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Strona
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="ElementZamowienia" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                ElementZamowienia
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Kategoria" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Kategoria
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Producent" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Producent
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Produkt" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Produkt
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Recenzja" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Recenzja
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Rola" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Rola
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="StatusZamowienia" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                StatusZamowienia
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a asp-controller="Uzytkownik" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Uzytkownik
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Zamowienie" asp-action="Index" class="nav-link link-dark">
+                <!-- Dodaj asp-controller i asp-action -->
+                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Zamowienie
+            </a>
+        </li>
+    </ul>
+    <hr>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+    
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false" >
+            <img src="https://github.com/1NOTME1.png" alt="Profil" width="32" height="32" class="rounded-circle me-2">
+            <strong>Użytkownik</strong>
+        </a>
+        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+            <li><a class="dropdown-item" href="#">Nowy projekt...</a></li>
+            <li><a class="dropdown-item" href="#">Ustawienia</a></li>
+            <li><a class="dropdown-item" href="#">Profil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Wyloguj się</a></li>
+        </ul>
+    </div>
+</div>

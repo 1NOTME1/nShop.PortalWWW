@@ -1,0 +1,290 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.homepage {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-bar {
+    display: flex;
+    margin-top: 20px;
+}
+
+    .search-bar input {
+        padding: 10px;
+        border: none;
+        flex: 1;
+    }
+
+    .search-bar button {
+        padding: 10px 20px;
+        background-color: #444;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+main {
+    padding: 40px 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.slider {
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.products-grid, .offers-grid, .arrivals-grid, .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.product, .offer, .arrival, .review {
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/*    .product img, .offer img, .arrival img, .review img {
+        width: 100%;
+        object-fit: cover;
+        height: 200px;
+    }*/
+
+.product-info, .offer-info, .arrival-info, .review-content {
+    padding-top: 10px;
+}
+
+    .product-info h3, .offer-info h3, .arrival-info h3, .review h3 {
+        margin: 0;
+    }
+
+    .product-info p, .offer-info p, .arrival-info p, .review p {
+        margin: 10px 0;
+    }
+
+    .product-info span, .offer-info span {
+        font-weight: bold;
+    }
+
+.newsletter {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+    .newsletter form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .newsletter input {
+        padding: 10px;
+        border: 1px solid #ddd;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .newsletter button {
+        padding: 10px 20px;
+        background-color: #333;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+.social-media {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+    .social-media ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-media li {
+        margin: 0 20px;
+    }
+
+    .social-media a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+footer {
+    background-color: #444;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+    .footer-content h3 {
+        color: #fff;
+    }
+
+    .footer-content ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-content li {
+        margin-bottom: 5px;
+    }
+
+    .footer-content a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+.copyright {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/*contact.cshtml*/
+
+
+.contact-page {
+    padding: 40px 20px;
+}
+
+.contact-info {
+    margin-top: 40px;
+}
+
+    .contact-info .fa {
+        color: #444;
+        margin-bottom: 20px;
+    }
+
+.contact-form {
+    margin-top: 40px;
+}
+
+    .contact-form h2 {
+        text-align: center;
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 20px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .contact-form button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
