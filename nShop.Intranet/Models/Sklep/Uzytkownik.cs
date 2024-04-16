@@ -21,5 +21,5 @@ public class Uzytkownik
     [Display(Name = "Rola")]
     public int RolaId { get; set; }
 
-    public Rola Rola { get; set; }
+    public Rola? Rola { get; set; }
 }

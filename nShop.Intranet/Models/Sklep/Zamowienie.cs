@@ -16,7 +16,7 @@ public class Zamowienie
     [Display(Name = "Suma")]
     public decimal Suma { get; set; }
 
-    public Uzytkownik Uzytkownik { get; set; }
-    public StatusZamowienia StatusZamowienia { get; set; }
+    public Uzytkownik? Uzytkownik { get; set; }
+    public StatusZamowienia? StatusZamowienia { get; set; }
     public ICollection<ElementZamowienia> ElementyZamowienia { get; } = new List<ElementZamowienia>();
 }

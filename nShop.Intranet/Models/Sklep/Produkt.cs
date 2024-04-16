@@ -28,7 +28,7 @@ public class Produkt
     [Display(Name = "Zdjęcie")]
     public string SciezkaZdjecia { get; set; } // Ścieżka do pliku ze zdjęciem
 
-    public Kategoria Kategoria { get; set; }
-    public Producent Producent { get; set; }
+    public Kategoria? Kategoria { get; set; }
+    public Producent? Producent { get; set; }
     public ICollection<Recenzja> Recenzje { get; } = new List<Recenzja>();
 }

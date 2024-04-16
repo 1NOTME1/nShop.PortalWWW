@@ -17,6 +17,6 @@ public class ElementZamowienia
     [Display(Name = "Cena jednostkowa")]
     public decimal CenaJednostkowa { get; set; }
 
-    public Zamowienie Zamowienie { get; set; }
-    public Produkt Produkt { get; set; }
+    public Zamowienie? Zamowienie { get; set; }
+    public Produkt? Produkt { get; set; }
 }

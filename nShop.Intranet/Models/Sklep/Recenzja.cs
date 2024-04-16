@@ -12,6 +12,6 @@ public class Recenzja
     [Display(Name = "Ocena")]
     public int Ocena { get; set; }
 
-    public Produkt Produkt { get; set; }
-    public Uzytkownik Uzytkownik { get; set; }
+    public Produkt? Produkt { get; set; }
+    public Uzytkownik? Uzytkownik { get; set; }
 }
