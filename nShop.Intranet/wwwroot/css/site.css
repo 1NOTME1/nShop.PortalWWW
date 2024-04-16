@@ -1,5 +1,7 @@
-html {
-  font-size: 14px;
+﻿html {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -19,4 +21,146 @@ html {
 
 body {
   margin-bottom: 60px;
+  padding: 0;
+  margin: 0;
 }
+
+.nav-link {
+    color: black;
+}
+
+    .nav-link:hover {
+        background-color: #e9ecef;
+        font-weight: bold;
+    }
+
+.nav-link.active {
+    background-color: #e9ecef;
+}
+
+/* Stylowanie ogólne dla tabeli */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+
+    /* Kolor tła i tekst dla nagłówka tabeli */
+    .table thead th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    /* Zmiana tła wiersza przy najechaniu myszą */
+    .table tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+
+/* Stylowanie przycisków */
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-edit {
+    background-color: #4CAF50;
+}
+
+.btn-delete {
+    background-color: #f44336;
+}
+
+.btn-create {
+    background-color: #008CBA;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+
+h1 {
+    text-align:center;
+}
+
+/* Styl ogólny strony */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+/* Styl nagłówków */
+h1, h4 {
+    color: #333;
+}
+
+/* Stylizacja formularza */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Stylizacja przycisków */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-warning {
+    padding: 10px 15px;
+
+}
+
+.btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+/* Stylizacja linków */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* Stylizacja komunikatów błędów */
+.text-danger {
+    color: #dc3545;
+}
+
+a:hover {
+    text-decoration: none;
+}
+

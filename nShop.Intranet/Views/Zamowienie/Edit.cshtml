@@ -1,47 +1,42 @@
 ﻿@model Zamowienie
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edytuj Zamówienie";
 }
 
-<h1>Edit</h1>
-
-<h4>Zamowienie</h4>
+<h1 style="text-align: center;">Edytuj Zamówienie</h1>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Edit" style="margin-top: 20px;">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="UzytkownikId" class="control-label"></label>
+                <label asp-for="UzytkownikId" class="control-label label">Użytkownik</label>
                 <select asp-for="UzytkownikId" class="form-control" asp-items="ViewBag.UzytkownikId"></select>
                 <span asp-validation-for="UzytkownikId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataZamowienia" class="control-label"></label>
+                <label asp-for="DataZamowienia" class="control-label label">Data zamówienia</label>
                 <input asp-for="DataZamowienia" class="form-control" />
                 <span asp-validation-for="DataZamowienia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StatusZamowieniaId" class="control-label"></label>
+                <label asp-for="StatusZamowieniaId" class="control-label label">Status zamówienia</label>
                 <select asp-for="StatusZamowieniaId" class="form-control" asp-items="ViewBag.StatusZamowieniaId"></select>
                 <span asp-validation-for="StatusZamowieniaId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Suma" class="control-label"></label>
+                <label asp-for="Suma" class="control-label label">Suma</label>
                 <input asp-for="Suma" class="form-control" />
                 <span asp-validation-for="Suma" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="text-align: center;">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-warning">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

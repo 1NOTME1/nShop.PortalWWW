@@ -53,7 +53,7 @@ namespace nShop.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nazwa")] StatusZamowienia statusZamowienia)
+        public async Task<IActionResult> Create([Bind("Id,Nazwa,Opis")] StatusZamowienia statusZamowienia)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace nShop.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nazwa")] StatusZamowienia statusZamowienia)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nazwa,Opis")] StatusZamowienia statusZamowienia)
         {
             if (id != statusZamowienia.Id)
             {

@@ -1,4 +1,13 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll('.nav-link');
 
-// Write your JavaScript code.
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            // Usuń klasę 'active' z wszystkich linków
+            navLinks.forEach(l => l.classList.remove('active'));
+
+            // Dodaj klasę 'active' do klikniętego linku
+            link.classList.add('active');
+        });
+    });
+});
