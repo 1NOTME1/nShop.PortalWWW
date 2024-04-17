@@ -2,41 +2,38 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Zamowienie</h4>
+<div class="container">
+    <h1 style="text-align: center;">Szczegóły zamówienia</h1>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataZamowienia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataZamowienia)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Suma)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Suma)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Uzytkownik)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Uzytkownik.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StatusZamowienia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StatusZamowienia.Nazwa)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-bordered table-hover">
+                <tbody>
+                    <tr>
+                        <th>Data zamówienia</th>
+                        <td>@Html.DisplayFor(model => model.DataZamowienia)</td>
+                    </tr>
+                    <tr>
+                        <th>Suma</th>
+                        <td>@Html.DisplayFor(model => model.Suma)</td>
+                    </tr>
+                    <tr>
+                        <th>Email użytkownika</th>
+                        <td>@Html.DisplayFor(model => model.Uzytkownik.Email)</td>
+                    </tr>
+                    <tr>
+                        <th>Status zamówienia</th>
+                        <td>@Html.DisplayFor(model => model.StatusZamowienia.Nazwa)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary mr-2">Edytuj</a>
+        <a asp-action="Index" class="btn btn-warning">Powrót do listy</a>
+    </div>
 </div>
