@@ -1,30 +1,39 @@
 ﻿@model Recenzja
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Szczegóły Recenzji";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Recenzja</h4>
+<div class="container">
+    <h1 style="text-align: center;">Szczegóły Recenzji</h1>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tekst)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tekst)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ocena)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ocena)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-bordered table-hover">
+                <tbody>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Tekst)</th>
+                        <td>@Html.DisplayFor(model => model.Tekst)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Ocena)</th>
+                        <td>@Html.DisplayFor(model => model.Ocena)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Uzytkownik.Email)</th>
+                        <td>@Html.DisplayFor(model => model.Uzytkownik.Email)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Produkt.Nazwa)</th>
+                        <td>@Html.DisplayFor(model => model.Produkt.Nazwa)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary mr-2">Edytuj</a>
+        <a asp-action="Index" class="btn btn-warning">Powrót do listy</a>
+    </div>
 </div>

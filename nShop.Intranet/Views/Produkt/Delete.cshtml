@@ -1,57 +1,44 @@
 ﻿@model Produkt
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Usuń Produkt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Delete</h1>
+<h1 class="text-center">Usuń Produkt</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Produkt</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nazwa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nazwa)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Opis)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Opis)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cena)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cena)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SciezkaZdjecia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SciezkaZdjecia)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Kategoria)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Kategoria.Nazwa)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Producent)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Producent.Nazwa)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3>Czy na pewno chcesz usunąć ten produkt?</h3>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Nazwa)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Nazwa)</dd>
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Opis)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Opis)</dd>
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Cena)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Cena)</dd>
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.SciezkaZdjecia)</dt>
+                <dd class="col-sm-8">
+                    <img src="@Model.SciezkaZdjecia" alt="Zdjęcie produktu" class="img-fluid" />
+                </dd>
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Kategoria.Nazwa)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Kategoria.Nazwa)</dd>
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Producent.Nazwa)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Producent.Nazwa)</dd>
+            </dl>
+            <form asp-action="Delete" method="post" style="text-align: center;">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Usuń" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-warning">Powrót do listy</a>
+            </form>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

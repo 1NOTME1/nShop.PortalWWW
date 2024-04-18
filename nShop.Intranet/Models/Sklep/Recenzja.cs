@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class Recenzja
 {
@@ -12,6 +13,13 @@ public class Recenzja
     [Display(Name = "Ocena")]
     public int Ocena { get; set; }
 
-    public Produkt? Produkt { get; set; }
+    [Required]
+    [Display(Name = "ID Użytkownika")]
+    public int UzytkownikId { get; set; }
     public Uzytkownik? Uzytkownik { get; set; }
+
+    [Required]
+    [Display(Name = "ID Produktu")]
+    public int ProduktId { get; set; }
+    public Produkt? Produkt { get; set; }
 }

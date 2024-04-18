@@ -1,38 +1,52 @@
 ﻿@model Recenzja
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Utwórz Recenzję";
 }
 
-<h1>Create</h1>
+<h1 class="text-center">Utwórz Recenzję</h1>
 
-<h4>Recenzja</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Tekst" class="control-label"></label>
-                <input asp-for="Tekst" class="form-control" />
-                <span asp-validation-for="Tekst" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ocena" class="control-label"></label>
-                <input asp-for="Ocena" class="form-control" />
-                <span asp-validation-for="Ocena" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="UzytkownikId" class="control-label">Użytkownik</label>
+                    <select asp-for="UzytkownikId" class="form-control" asp-items="@(new SelectList(ViewBag.Uzytkownicy, "Value", "Text"))"></select>
+                    <span asp-validation-for="UzytkownikId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProduktId" class="control-label">Produkt</label>
+                    <select asp-for="ProduktId" class="form-control" asp-items="@(new SelectList(ViewBag.Produkty, "Value", "Text"))"></select>
+                    <span asp-validation-for="ProduktId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Tekst" class="control-label">Tekst recenzji</label>
+                    <textarea asp-for="Tekst" class="form-control"></textarea>
+                    <span asp-validation-for="Tekst" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Ocena" class="control-label">Ocena</label>
+                    <input asp-for="Ocena" type="number" class="form-control" />
+                    <span asp-validation-for="Ocena" class="text-danger"></span>
+                </div>
+
+                <div class="form-group" style="text-align: center;">
+                    <input type="submit" value="Utwórz" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-warning">Powrót do listy</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
