@@ -64,6 +64,16 @@ namespace nShop.Intranet.Controllers
             {
                 _context.Add(elementZamowienia);
                 await _context.SaveChangesAsync();
+
+                var zamowienie = await _context.Zamowienie
+                    .Include(z => z.ElementyZamowienia)
+                    .FirstOrDefaultAsync(z => z.Id == elementZamowienia.ZamowienieId);
+                if (zamowienie != null)
+                {
+                    zamowienie.UpdateSuma();
+                    await _context.SaveChangesAsync();
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ProduktId"] = new SelectList(_context.Produkt, "Id", "Nazwa", elementZamowienia.ProduktId);
@@ -107,6 +117,15 @@ namespace nShop.Intranet.Controllers
                 {
                     _context.Update(elementZamowienia);
                     await _context.SaveChangesAsync();
+
+                    var zamowienie = await _context.Zamowienie
+                        .Include(z => z.ElementyZamowienia)
+                        .FirstOrDefaultAsync(z => z.Id == elementZamowienia.ZamowienieId);
+                    if (zamowienie != null)
+                    {
+                        zamowienie.UpdateSuma();
+                        await _context.SaveChangesAsync();
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -155,9 +174,18 @@ namespace nShop.Intranet.Controllers
             if (elementZamowienia != null)
             {
                 _context.ElementZamowienia.Remove(elementZamowienia);
+                await _context.SaveChangesAsync();
+
+                var zamowienie = await _context.Zamowienie
+                    .Include(z => z.ElementyZamowienia)
+                    .FirstOrDefaultAsync(z => z.Id == elementZamowienia.ZamowienieId);
+                if (zamowienie != null)
+                {
+                    zamowienie.UpdateSuma();
+                    await _context.SaveChangesAsync();
+                }
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

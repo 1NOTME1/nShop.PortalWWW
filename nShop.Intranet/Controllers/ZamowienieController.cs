@@ -165,5 +165,47 @@ namespace nShop.Intranet.Controllers
         {
             return _context.Zamowienie.Any(e => e.Id == id);
         }
+
+        public async Task<IActionResult> AddOrUpdateElement(int zamowienieId, ElementZamowienia element)
+        {
+            var zamowienie = await _context.Zamowienie
+                .Include(z => z.ElementyZamowienia)
+                .FirstOrDefaultAsync(z => z.Id == zamowienieId);
+
+            if (zamowienie == null)
+            {
+                return NotFound();
+            }
+
+            // Dodanie lub aktualizacja elementu zamówienia
+            // Tu logika dodawania lub aktualizacji
+
+            zamowienie.UpdateSuma();
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Details", new { id = zamowienieId });
+        }
+
+        public async Task<IActionResult> DeleteElement(int zamowienieId, int elementId)
+        {
+            var element = await _context.ElementZamowienia.FindAsync(elementId);
+            if (element != null)
+            {
+                _context.ElementZamowienia.Remove(element);
+                await _context.SaveChangesAsync();
+
+                var zamowienie = await _context.Zamowienie
+                    .Include(z => z.ElementyZamowienia)
+                    .FirstOrDefaultAsync(z => z.Id == zamowienieId);
+
+                if (zamowienie != null)
+                {
+                    zamowienie.UpdateSuma();
+                    await _context.SaveChangesAsync();
+                }
+            }
+
+            return RedirectToAction("Details", new { id = zamowienieId });
+        }
+
     }
 }

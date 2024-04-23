@@ -21,8 +21,15 @@ namespace nShop.Intranet.Controllers
         // GET: StatusZamowienia
         public async Task<IActionResult> Index()
         {
-            return View(await _context.StatusZamowienia.ToListAsync());
+            var zamowieniaZStatusami = _context.StatusZamowienia
+                .Include(sz => sz.Zamowienia)
+                    .ThenInclude(z => z.ElementyZamowienia)
+                    .ThenInclude(ez => ez.Produkt)
+                .ToListAsync();
+
+            return View(await zamowieniaZStatusami);
         }
+
 
         // GET: StatusZamowienia/Details/5
         public async Task<IActionResult> Details(int? id)

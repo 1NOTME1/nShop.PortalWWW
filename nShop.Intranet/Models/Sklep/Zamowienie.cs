@@ -19,4 +19,10 @@ public class Zamowienie
     public Uzytkownik? Uzytkownik { get; set; }
     public StatusZamowienia? StatusZamowienia { get; set; }
     public ICollection<ElementZamowienia> ElementyZamowienia { get; } = new List<ElementZamowienia>();
+
+    public void UpdateSuma()
+    {
+        this.Suma = this.ElementyZamowienia.Sum(e => e.Ilosc * e.CenaJednostkowa);
+    }
+
 }

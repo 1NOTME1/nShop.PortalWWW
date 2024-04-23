@@ -10,4 +10,6 @@ public class StatusZamowienia
 
     [Display(Name = "Opis statusu")]
     public string Opis { get; set; }
+
+    public ICollection<Zamowienie> Zamowienia { get; set; }
 }

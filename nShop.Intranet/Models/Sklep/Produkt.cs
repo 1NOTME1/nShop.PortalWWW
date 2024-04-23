@@ -19,6 +19,9 @@ public class Produkt
     [Display(Name = "Cena")]
     public decimal Cena { get; set; }
 
+    [Display(Name = "Ilość na magazynie")]
+    public int IloscNaMagazynie { get; set; }  // Dodana nowa właściwość
+
     [Display(Name = "Kategoria")]
     public int KategoriaId { get; set; }
 
