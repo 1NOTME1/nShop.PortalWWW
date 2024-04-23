@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using nShop.Intranet.Data;
-using nShop.Intranet.Models.Sklep;
+using nShop.Data.Data;
+using nShop.Data.Data.Sklep;
 
 namespace nShop.Intranet.Controllers
 {
     public class KategoriaController : Controller
     {
-        private readonly nShopIntranetContext _context;
+        private readonly nShopContext _context;
 
-        public KategoriaController(nShopIntranetContext context)
+        public KategoriaController(nShopContext context)
         {
             _context = context;
         }

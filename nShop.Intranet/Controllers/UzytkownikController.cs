@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using nShop.Intranet.Data;
+using nShop.Data.Data;
+using nShop.Data.Data.Sklep;
 
 namespace nShop.Intranet.Controllers
 {
     public class UzytkownikController : Controller
     {
-        private readonly nShopIntranetContext _context;
+        private readonly nShopContext _context;
 
-        public UzytkownikController(nShopIntranetContext context)
+        public UzytkownikController(nShopContext context)
         {
             _context = context;
         }

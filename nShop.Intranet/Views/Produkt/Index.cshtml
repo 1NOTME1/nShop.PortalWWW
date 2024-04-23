@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Produkt>
+﻿@model IEnumerable<nShop.Data.Data.Sklep.Produkt>
 
 @{
     ViewData["Title"] = "Lista Produktów";
@@ -13,24 +13,21 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().Nazwa)
+                @Html.DisplayNameFor(model => model.Nazwa)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().Opis)
+                @Html.DisplayNameFor(model => model.Cena)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().Cena)
+                @Html.DisplayNameFor(model => model.Kategoria)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().SciezkaZdjecia)
+                @Html.DisplayNameFor(model => model.Producent)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().Kategoria.Nazwa)
+                Ilość na magazynie
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstOrDefault().Producent.Nazwa)
-            </th>
-            <th>Akcje</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -41,13 +38,7 @@
                     @Html.DisplayFor(modelItem => item.Nazwa)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Opis)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Cena)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SciezkaZdjecia)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Kategoria.Nazwa)
@@ -56,9 +47,13 @@
                     @Html.DisplayFor(modelItem => item.Producent.Nazwa)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-edit">Edytuj</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Szczegóły</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-delete">Usuń</a>
+                    @Html.DisplayFor(modelItem => item.IloscNaMagazynie)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-edit">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-delete">Delete</a>
+
                 </td>
             </tr>
         }

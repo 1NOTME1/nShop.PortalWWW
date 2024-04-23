@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nShop.PortalWWW", "nShop.PortalWWW\nShop.PortalWWW.csproj", "{27CD2839-74C0-41A8-8A83-2817A301BEA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nShop.PortalWWW", "nShop.PortalWWW\nShop.PortalWWW.csproj", "{27CD2839-74C0-41A8-8A83-2817A301BEA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nShop.Intranet", "nShop.Intranet\nShop.Intranet.csproj", "{2E129662-A50E-4940-88DC-28EFF233C4B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nShop.Intranet", "nShop.Intranet\nShop.Intranet.csproj", "{2E129662-A50E-4940-88DC-28EFF233C4B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nShop.Data", "nShop.Data\nShop.Data.csproj", "{8C876894-A6F2-4F01-A743-482D57E1A700}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2E129662-A50E-4940-88DC-28EFF233C4B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E129662-A50E-4940-88DC-28EFF233C4B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E129662-A50E-4940-88DC-28EFF233C4B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C876894-A6F2-4F01-A743-482D57E1A700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C876894-A6F2-4F01-A743-482D57E1A700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C876894-A6F2-4F01-A743-482D57E1A700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C876894-A6F2-4F01-A743-482D57E1A700}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

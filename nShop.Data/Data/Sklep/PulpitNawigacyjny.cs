@@ -1,4 +1,10 @@
-﻿namespace nShop.Intranet.Models.Sklep
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace nShop.Data.Data.Sklep
 {
     public class PulpitNawigacyjny
     {

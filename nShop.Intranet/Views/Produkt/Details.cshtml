@@ -1,4 +1,4 @@
-﻿@model Produkt
+﻿@model nShop.Data.Data.Sklep.Produkt
 
 @{
     ViewData["Title"] = "Szczegóły Produktu";
@@ -24,6 +24,11 @@
                         <th>@Html.DisplayNameFor(model => model.Cena)</th>
                         <td>@Html.DisplayFor(model => model.Cena)</td>
                     </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.IloscNaMagazynie)</th>
+                        <td>@Html.DisplayFor(model => model.IloscNaMagazynie)</td>
+                    </tr>
+
                     <tr>
                         <th>@Html.DisplayNameFor(model => model.SciezkaZdjecia)</th>
                         <td>

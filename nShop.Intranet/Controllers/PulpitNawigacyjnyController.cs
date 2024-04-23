@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using nShop.Intranet.Data;
-using nShop.Intranet.Models.Sklep;
 using Microsoft.EntityFrameworkCore;
+using nShop.Data.Data;
+using nShop.Data.Data.Sklep;
 
 public class PulpitNawigacyjnyController : Controller
 {
-    private readonly nShopIntranetContext _context;
+    private readonly nShopContext _context;
 
-    public PulpitNawigacyjnyController(nShopIntranetContext context)
+    public PulpitNawigacyjnyController(nShopContext context)
     {
         _context = context;
     }

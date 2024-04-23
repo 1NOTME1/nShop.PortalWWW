@@ -1,12 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using nShop.Intranet.Models.CMS;
-using nShop.Intranet.Models.Sklep;
+using nShop.Data.Data.CMS;
+using nShop.Data.Data.Sklep;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace nShop.Intranet.Data
+namespace nShop.Data.Data
 {
-    public class nShopIntranetContext : DbContext
+    public class nShopContext : DbContext
     {
-        public nShopIntranetContext(DbContextOptions<nShopIntranetContext> options)
+        public nShopContext(DbContextOptions<nShopContext> options)
             : base(options)
         {
         }
@@ -27,11 +32,13 @@ namespace nShop.Intranet.Data
         {
             modelBuilder.Entity<ElementZamowienia>()
                 .Property(e => e.CenaJednostkowa)
-                .HasColumnType("decimal(18, 2)");
+                .HasPrecision(18, 2); // Ustawia precyzję i skalę dla właściwości dziesiętnej
 
             modelBuilder.Entity<Zamowienie>()
-                .Property(z => z.Suma)
-                .HasColumnType("decimal(18, 2)");
+                .Property(e => e.Suma)
+                .HasPrecision(18, 2);
         }
+
+
     }
 }

@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using nShop.Intranet.Data;
+using nShop.Data.Data;
+using nShop.Data.Data.Sklep;
 
 namespace nShop.Intranet.Controllers
 {
     public class ProduktController : Controller
     {
-        private readonly nShopIntranetContext _context;
+        private readonly nShopContext _context;
 
-        public ProduktController(nShopIntranetContext context)
+        public ProduktController(nShopContext context)
         {
             _context = context;
         }
@@ -58,7 +59,7 @@ namespace nShop.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nazwa,Opis,Cena,KategoriaId,ProducentId,SciezkaZdjecia")] Produkt produkt)
+        public async Task<IActionResult> Create([Bind("Id,Nazwa,Opis,Cena,KategoriaId,ProducentId,IloscNaMagazynie,SciezkaZdjecia")] Produkt produkt)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +95,7 @@ namespace nShop.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nazwa,Opis,Cena,KategoriaId,ProducentId,SciezkaZdjecia")] Produkt produkt)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nazwa,Opis,Cena,KategoriaId,ProducentId,IloscNaMagazynie, SciezkaZdjecia")] Produkt produkt)
         {
             if (id != produkt.Id)
             {

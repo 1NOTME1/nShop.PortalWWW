@@ -1,12 +1,12 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 #nullable disable
 
-namespace nShop.Intranet.Migrations
+namespace nShop.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class M1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -76,7 +76,8 @@ namespace nShop.Intranet.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nazwa = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Nazwa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Opis = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -108,6 +109,7 @@ namespace nShop.Intranet.Migrations
                     Nazwa = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Opis = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Cena = table.Column<decimal>(type: "money", nullable: false),
+                    IloscNaMagazynie = table.Column<int>(type: "int", nullable: false),
                     KategoriaId = table.Column<int>(type: "int", nullable: false),
                     ProducentId = table.Column<int>(type: "int", nullable: false),
                     SciezkaZdjecia = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -160,8 +162,8 @@ namespace nShop.Intranet.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Tekst = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Ocena = table.Column<int>(type: "int", nullable: false),
-                    ProduktId = table.Column<int>(type: "int", nullable: false),
-                    UzytkownikId = table.Column<int>(type: "int", nullable: false)
+                    UzytkownikId = table.Column<int>(type: "int", nullable: false),
+                    ProduktId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -1,4 +1,4 @@
-﻿@model Produkt
+﻿@model nShop.Data.Data.Sklep.Produkt
 
 @{
     ViewData["Title"] = "Edytuj Produkt";
@@ -42,6 +42,13 @@
                     <select asp-for="ProducentId" class="form-control" asp-items="@ViewBag.ProducentId"></select>
                     <span asp-validation-for="ProducentId" class="text-danger"></span>
                 </div>
+
+                <div class="form-group">
+                    <label asp-for="IloscNaMagazynie" class="control-label">Ilość na magazynie</label>
+                    <input asp-for="IloscNaMagazynie" type="number" class="form-control" />
+                    <span asp-validation-for="IloscNaMagazynie" class="text-danger"></span>
+                </div>
+
 
                 <div class="form-group">
                     <label asp-for="SciezkaZdjecia" class="control-label label">Ścieżka Zdjęcia</label>

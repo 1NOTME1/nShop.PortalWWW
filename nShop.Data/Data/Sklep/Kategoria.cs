@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace nShop.Intranet.Models.Sklep
+namespace nShop.Data.Data.Sklep
 {
     public class Kategoria
     {
@@ -14,7 +18,6 @@ namespace nShop.Intranet.Models.Sklep
         [Display(Name = "Opis kategorii")]
         public string Opis { get; set; }
 
-        // Dodaj odpowiednią kolekcję Produktów
         public ICollection<Produkt> Produkty { get; } = new List<Produkt>();
     }
 }

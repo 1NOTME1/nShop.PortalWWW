@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using nShop.Intranet.Data;
-using nShop.Intranet.Models.CMS;
+using nShop.Data.Data;
+using nShop.Data.Data.CMS;
 
 namespace nShop.Intranet.Controllers
 {
     public class StronaController : Controller
     {
-        private readonly nShopIntranetContext _context;
+        private readonly nShopContext _context;
 
-        public StronaController(nShopIntranetContext context)
+        public StronaController(nShopContext context)
         {
             _context = context;
         }
