@@ -1,0 +1,17 @@
+﻿@model IEnumerable<nShop.Data.Data.CMS.Strona>
+
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <ul class="navbar-nav flex-grow-1">
+        @foreach(var item in Model)
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="@item.IdStrony">@item.LinkTytul</a>
+            </li>
+        }
+        
+    </ul>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Szukaj produktów..." aria-label="Szukaj">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Wyszukaj</button>
+    </form>
+</div>

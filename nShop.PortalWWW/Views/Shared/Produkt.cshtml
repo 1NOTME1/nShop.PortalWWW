@@ -1,0 +1,19 @@
+﻿<div class="popular-products">
+    <h2>Najpopularniejsze produkty</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 col-sm-6 col-xs-12 mb-4">
+                <div class="product">
+                    <img src="@Url.Content($"~/{item.SciezkaZdjecia}")" alt="Obraz produktu" class="img-fluid">
+                    <div class="product-info">
+                        <h4>@item.Nazwa</h4>
+                        <p>@item.Opis</p>
+                        <span>@item.Cena</span>
+                        <a asp-controller="Products" asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary">Szczegóły</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

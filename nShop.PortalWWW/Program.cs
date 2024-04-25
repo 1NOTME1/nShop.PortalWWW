@@ -1,4 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using nShop.Data.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<nShopContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("nShopContext") ?? throw new InvalidOperationException("Connection string 'nShopIntranetContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
