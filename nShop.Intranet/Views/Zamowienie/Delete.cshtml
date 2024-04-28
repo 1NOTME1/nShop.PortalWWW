@@ -14,19 +14,15 @@
         </div>
         <div class="card-body">
             <dl class="row">
-                <!-- Data zamówienia -->
                 <dt class="col-sm-4 col-md-2 font-weight-bold">Data zamówienia:</dt>
                 <dd class="col-sm-8 col-md-10">@Html.DisplayFor(model => model.DataZamowienia)</dd>
 
-                <!-- Suma -->
                 <dt class="col-sm-4 col-md-2 font-weight-bold">Suma:</dt>
                 <dd class="col-sm-8 col-md-10">@Html.DisplayFor(model => model.Suma)</dd>
 
-                <!-- Email użytkownika -->
                 <dt class="col-sm-4 col-md-2 font-weight-bold">Email użytkownika:</dt>
                 <dd class="col-sm-8 col-md-10">@Html.DisplayFor(model => model.Uzytkownik.Email)</dd>
 
-                <!-- Status zamówienia -->
                 <dt class="col-sm-4 col-md-2 font-weight-bold">Status zamówienia:</dt>
                 <dd class="col-sm-8 col-md-10">@Html.DisplayFor(model => model.StatusZamowienia.Nazwa)</dd>
             </dl>

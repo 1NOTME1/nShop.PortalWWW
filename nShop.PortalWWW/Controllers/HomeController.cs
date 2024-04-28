@@ -21,18 +21,35 @@ namespace nShop.PortalWWW.Controllers
         //w parametrze id jest numer storny, ktory klik, a przy 1 uruchomieniu witryny id wynosi 1
         public async Task<IActionResult> Index(int? id)
         {
-            //z bazy danych pobiearmy wszystkie strony posortowane wzgledem pozycji
-            //i zapisujemy je w ViewBagu
-            ViewBag.ModelStrony = await _context.Strona.OrderBy(s=>s.Pozycja).ToListAsync();
-            ViewBag.ModelProdukt = await _context.Produkt.OrderBy(s=>s.Id).ToListAsync();
-            
-            if(id == null)
+            if (id == 1)
+            {
+                ViewBag.ModelProdukt = await _context.Produkt.OrderBy(s => s.Id).ToListAsync();
+            }
+            else
+            {
+                ViewBag.ModelProdukt = null;
+            }
+            ViewBag.ModelStrony = await _context.Strona.OrderBy(s => s.Pozycja).ToListAsync();
+
+            // Domy?lnie ustawiamy ID na 1, je?li nie zosta?o przekazane
+            if (id == null)
                 id = 1;
 
             var item = await _context.Strona.FindAsync(id);
 
+            // Ustawiamy produkty tylko dla strony o ID 1
+            if (id == 1)
+            {
+                ViewBag.ModelProdukt = await _context.Produkt.OrderBy(s => s.Id).ToListAsync();
+            }
+            else
+            {
+                ViewBag.ModelProdukt = null;
+            }
+
             return View(item);
         }
+
 
         public IActionResult Privacy()
         {

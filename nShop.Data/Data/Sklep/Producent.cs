@@ -19,7 +19,7 @@ namespace nShop.Data.Data.Sklep
         public string Opis { get; set; }
 
         [Display(Name = "Logo")]
-        public string SciezkaLogo { get; set; } // Ścieżka do pliku z logo producenta
+        public string SciezkaLogo { get; set; }
 
         public ICollection<Produkt> Produkty { get; } = new List<Produkt>();
     }

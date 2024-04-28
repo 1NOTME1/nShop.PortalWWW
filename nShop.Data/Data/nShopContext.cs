@@ -32,7 +32,7 @@ namespace nShop.Data.Data
         {
             modelBuilder.Entity<ElementZamowienia>()
                 .Property(e => e.CenaJednostkowa)
-                .HasPrecision(18, 2); // Ustawia precyzję i skalę dla właściwości dziesiętnej
+                .HasPrecision(18, 2);
 
             modelBuilder.Entity<Zamowienie>()
                 .Property(e => e.Suma)

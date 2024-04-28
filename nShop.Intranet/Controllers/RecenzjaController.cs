@@ -40,8 +40,8 @@ namespace nShop.Intranet.Controllers
             }
 
             var recenzja = await _context.Recenzja
-                .Include(r => r.Uzytkownik) // Załaduj informacje o użytkowniku
-                .Include(r => r.Produkt)    // Załaduj informacje o produkcie
+                .Include(r => r.Uzytkownik)
+                .Include(r => r.Produkt)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (recenzja == null)
@@ -57,7 +57,7 @@ namespace nShop.Intranet.Controllers
         public IActionResult Create()
         {
             // Pobranie listy użytkowników
-            ViewBag.Uzytkownicy = new SelectList(_context.Uzytkownik.ToList(), "Id", "Email"); // lub "Imie Nazwisko" jako tekst
+            ViewBag.Uzytkownicy = new SelectList(_context.Uzytkownik.ToList(), "Id", "Email");
 
             // Pobranie listy produktów
             ViewBag.Produkty = new SelectList(_context.Produkt.ToList(), "Id", "Nazwa");
@@ -79,7 +79,6 @@ namespace nShop.Intranet.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            // Ponownie przygotuj listy w przypadku błędów
             ViewBag.Uzytkownicy = new SelectList(_context.Uzytkownik.ToList(), "Id", "Email");
             ViewBag.Produkty = new SelectList(_context.Produkt.ToList(), "Id", "Nazwa");
 
@@ -105,7 +104,6 @@ namespace nShop.Intranet.Controllers
                 return NotFound();
             }
 
-            // Przygotuj SelectListy
             ViewBag.Uzytkownicy = new SelectList(_context.Uzytkownik.ToList(), "Id", "Email");
             ViewBag.Produkty = new SelectList(_context.Produkt.ToList(), "Id", "Nazwa");
 
@@ -145,7 +143,6 @@ namespace nShop.Intranet.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            // Przygotuj SelectListy w przypadku błędu
             ViewBag.Uzytkownicy = new SelectList(_context.Uzytkownik.ToList(), "Id", "Email");
             ViewBag.Produkty = new SelectList(_context.Produkt.ToList(), "Id", "Nazwa");
 
@@ -153,7 +150,6 @@ namespace nShop.Intranet.Controllers
         }
 
 
-        // GET: Recenzja/Delete/5
         // GET: Recenzja/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -163,8 +159,8 @@ namespace nShop.Intranet.Controllers
             }
 
             var recenzja = await _context.Recenzja
-                .Include(r => r.Uzytkownik) // Upewnij się, że dane użytkownika są załadowane
-                .Include(r => r.Produkt)    // Upewnij się, że dane produktu są załadowane
+                .Include(r => r.Uzytkownik)
+                .Include(r => r.Produkt)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (recenzja == null)
@@ -189,7 +185,6 @@ namespace nShop.Intranet.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
-
 
         private bool RecenzjaExists(int id)
         {

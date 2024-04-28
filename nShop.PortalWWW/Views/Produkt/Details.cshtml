@@ -1,0 +1,55 @@
+﻿@model nShop.Data.Data.Sklep.Produkt
+
+@{
+    ViewData["Title"] = "Szczegóły produktu";
+}
+
+<div class="container">
+    <h1>@Model.Nazwa</h1>
+    <div class="row">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="@Url.Content($"~/{Model.SciezkaZdjecia}")" alt="Zdjęcie @Model.Nazwa" class="img-fluid w-100 mb-3">
+                </div>
+
+                <div class="col-md-6">
+                    <div class="product-info-box p-4 shadow-sm bg-white">
+                        <h2 class="product-title">@Model.Nazwa</h2>
+                        <p class="product-description">@Model.Opis</p>
+                        <p class="product-price">Cena: <span class="price">@Model.Cena zł</span></p>
+                        <p class="product-stock">Ilość na magazynie: <span class="stock">@Model.IloscNaMagazynie</span></p>
+                        <p class="product-producer">Producent: <span class="producer">@Model.Producent?.Nazwa</span></p>
+                        <p class="product-category">Kategoria: <span class="category">@Model.Kategoria?.Nazwa</span></p>
+                        <button class="btn btn-primary add-to-cart-btn">Dodaj do koszyka</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h4>Recenzje</h4>
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>Użytkownik</th>
+                        <th>Treść</th>
+                        <th>Ocena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var recenzja in Model.Recenzje)
+                    {
+                        <tr>
+                            <td>@recenzja.Uzytkownik?.Imie @recenzja.Uzytkownik?.Nazwisko</td>
+                            <td>@recenzja.Tekst</td>
+                            <td>@recenzja.Ocena / 5 gwiazdek</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
