@@ -1,0 +1,45 @@
+﻿@model nShop.Data.Data.Sklep.Zamowienie
+
+<div class="container">
+    <h1>Koszyk</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Produkt</th>
+                <th>Ilość</th>
+                <th>Cena jednostkowa</th>
+                <th>Razem</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ElementyZamowienia)
+            {
+                <tr>
+                    <td>@item.Produkt.Nazwa</td>
+                    <td>@item.Ilosc</td>
+                    <td>@item.CenaJednostkowa</td>
+                    <td>@(item.Ilosc * item.CenaJednostkowa)</td>
+                    <td>
+                        <form asp-action="UsunZKoszyka" asp-controller="Zamowienie" method="post" style="display:inline;">
+                            <input type="hidden" name="produktId" value="@item.ProduktId" />
+                            <button type="submit" class="btn btn-danger btn-sm">Usuń</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Suma</td>
+                <td>@Model.Suma</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <form asp-action="PotwierdzZamowienie" asp-controller="Zamowienie" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <button type="submit" class="btn btn-primary">Potwierdź zamówienie</button>
+    </form>
+</div>

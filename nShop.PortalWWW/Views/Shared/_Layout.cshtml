@@ -16,7 +16,8 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                @await Html.PartialAsync("Odnosniki",(IEnumerable<nShop.Data.Data.CMS.Strona>)ViewBag.ModelStrony)
+                @await Html.PartialAsync("Odnosniki", (IEnumerable<nShop.Data.Data.CMS.Strona>)ViewBag.ModelStrony)
+                <button id="toggle-dark-mode" class="btn btn-secondary">Dark Mode</button>
             </div>
         </nav>
     </header>
@@ -25,8 +26,6 @@
             @RenderBody()
         </div>
     </main>
-
-    
 
     <footer class="border-top footer text-muted py-4 bg-light">
         <div class="container">

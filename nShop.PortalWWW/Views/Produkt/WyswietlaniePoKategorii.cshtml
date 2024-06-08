@@ -1,0 +1,23 @@
+﻿@model IEnumerable<nShop.Data.Data.Sklep.Produkt>
+
+<div class="container">
+    <h1>Produkty w kategorii</h1>
+    <div class="row">
+        @foreach (var produkt in Model)
+        {
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card shadow-sm mb-4">
+                    <img src="@Url.Content($"~/content/{produkt.SciezkaZdjecia}")" alt="@produkt.Nazwa" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="product-title">@produkt.Nazwa</h5>
+                        <p class="product-price">@produkt.Cena zł</p>
+                        <p class="product-info"><strong>Kategoria:</strong> @(produkt.Kategoria?.Nazwa ?? "Brak kategorii")</p>
+                        <p class="product-info"><strong>Producent:</strong> @(produkt.Producent?.Nazwa ?? "Brak producenta")</p>
+                        <p class="product-info"><strong>Ilość na magazynie:</strong> @(produkt.IloscNaMagazynie > 0 ? produkt.IloscNaMagazynie.ToString() : "Niedostępny")</p>
+                        <a href="@Url.Action("Details", "Produkt", new { id = produkt.Id })" class="btn btn-primary">Zobacz więcej</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

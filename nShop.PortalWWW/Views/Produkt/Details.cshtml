@@ -21,12 +21,15 @@
                         <p class="product-stock">Ilość na magazynie: <span class="stock">@Model.IloscNaMagazynie</span></p>
                         <p class="product-producer">Producent: <span class="producer">@Model.Producent?.Nazwa</span></p>
                         <p class="product-category">Kategoria: <span class="category">@Model.Kategoria?.Nazwa</span></p>
-                        <button class="btn btn-primary add-to-cart-btn">Dodaj do koszyka</button>
+                        <form asp-action="DodajDoKoszyka" asp-controller="Zamowienie" method="post">
+                            <input type="hidden" name="produktId" value="@Model.Id" />
+                            <input type="number" name="ilosc" value="1" min="1" class="form-control mb-2" />
+                            <button type="submit" class="btn btn-primary mt-auto add-to-cart-btn">Dodaj do koszyka</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
     <div class="row justify-content-center">
         <div class="col-12">
