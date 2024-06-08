@@ -1,7 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using nShop.Data.Data;
+using Microsoft.Extensions.DependencyInjection;
+using nShop.PortalWWW.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<nShopPortalWWWContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("nShopPortalWWWContext") ?? throw new InvalidOperationException("Connection string 'nShopPortalWWWContext' not found.")));
 
 builder.Services.AddDbContext<nShopContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("nShopContext") ?? throw new InvalidOperationException("Connection string 'nShopIntranetContext' not found.")));
