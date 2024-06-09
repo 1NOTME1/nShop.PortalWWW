@@ -17,7 +17,6 @@
             }
         });
 
-        // Load the user's preference
         if (localStorage.getItem('dark-mode') === 'true') {
             body.classList.add('dark-mode');
             console.log('Dark mode loaded from localStorage');
