@@ -1,0 +1,29 @@
+﻿@model nShop.Data.Data.Sklep.Recenzja
+
+<h4>Dodaj Recenzję</h4>
+<form asp-action="DodajRecenzje" asp-controller="Home" method="post">
+    <div class="form-group">
+        <label for="ProduktId">Produkt</label>
+        <select class="form-control" name="ProduktId" required>
+            @foreach (var produkt in (IEnumerable<nShop.Data.Data.Sklep.Produkt>)ViewBag.ModelProdukt)
+            {
+                <option value="@produkt.Id">@produkt.Nazwa</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Tekst">Treść recenzji</label>
+        <textarea class="form-control" name="Tekst" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Ocena">Ocena</label>
+        <select class="form-control" name="Ocena" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj Recenzję</button>
+</form>

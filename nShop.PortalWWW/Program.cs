@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using nShop.Data.Data;
 using Microsoft.Extensions.DependencyInjection;
 using nShop.PortalWWW.Data;

@@ -53,6 +53,26 @@
                     }
                 </tbody>
             </table>
+
+            <h4>Dodaj Recenzję</h4>
+            <form asp-action="DodajRecenzje" asp-controller="Produkt" method="post">
+                <input type="hidden" name="ProduktId" value="@Model.Id" />
+                <div class="form-group">
+                    <label for="Tekst">Treść recenzji</label>
+                    <textarea class="form-control" name="Tekst" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Ocena">Ocena</label>
+                    <select class="form-control" name="Ocena" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Dodaj Recenzję</button>
+            </form>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using nShop.Data.Data;
 using nShop.Data.Data.Sklep;
@@ -19,7 +19,6 @@ namespace nShop.PortalWWW.Controllers
             _context = context;
         }
 
-        //w parametrze id jest numer storny, ktory klik, a przy 1 uruchomieniu witryny id wynosi 1
         public async Task<IActionResult> Index(int? id)
         {
             ViewBag.ModelStrony = await _context.Strona.OrderBy(s => s.Pozycja).ToListAsync();
@@ -29,7 +28,6 @@ namespace nShop.PortalWWW.Controllers
 
             var item = await _context.Strona.FindAsync(id);
 
-            // Ustawiamy produkty tylko dla strony o ID 1
             if (id == 1)
             {
                 ViewBag.ModelProdukt = await _context.Produkt.OrderBy(s => s.Id).ToListAsync();
@@ -59,6 +57,11 @@ namespace nShop.PortalWWW.Controllers
 
                 ViewBag.ModelKoszyk = koszyk;
             }
+            else if (id == 4)
+            {
+                ViewBag.ModelRecenzja = new Recenzja();
+                ViewBag.ModelProdukt = await _context.Produkt.OrderBy(s => s.Id).ToListAsync();
+            }
             else
             {
                 ViewBag.ModelProdukt = null;
@@ -66,6 +69,23 @@ namespace nShop.PortalWWW.Controllers
             }
 
             return View(item);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DodajRecenzje(Recenzja recenzja)
+        {
+            if (ModelState.IsValid)
+            {
+                recenzja.UzytkownikId = 1; // Zawsze ustawiaj ID użytkownika na 1
+                _context.Recenzja.Add(recenzja);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index", new { id = 4 });
+            }
+
+            ViewBag.ModelProdukt = await _context.Produkt.OrderBy(s => s.Id).ToListAsync();
+            ViewBag.ModelRecenzja = recenzja;
+
+            return View("Index");
         }
 
         private int GetCurrentUserId()
