@@ -106,12 +106,12 @@ namespace nShop.PortalWWW.Controllers
 
         private int GetCurrentUserId()
         {
-            return 1; // Replace with actual implementation
+            return 1;
         }
 
         private int GetCartStatusId()
         {
-            return 1; // Replace with actual implementation
+            return 1;
         }
 
         [HttpPost]

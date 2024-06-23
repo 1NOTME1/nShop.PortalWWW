@@ -21,7 +21,6 @@ namespace nShop.PortalWWW.Controllers
 
         public async Task<IActionResult> Index()
         {
-            // Włączenie Eager Loading dla relacji Uzytkownik i Produkt
             var recenzje = await _context.Recenzja
                 .Include(r => r.Uzytkownik)
                 .Include(r => r.Produkt)
@@ -32,7 +31,6 @@ namespace nShop.PortalWWW.Controllers
         [HttpGet]
         public IActionResult DodajRecenzje()
         {
-            // Przekazanie listy produktów do ViewBag, aby można było wybrać produkt w formularzu
             ViewBag.Produkty = new SelectList(_context.Produkt, "Id", "Nazwa");
             return View();
         }

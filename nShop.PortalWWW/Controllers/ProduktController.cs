@@ -73,7 +73,7 @@ namespace nShop.PortalWWW.Controllers
         {
             if (ModelState.IsValid)
             {
-                recenzja.UzytkownikId = 1; // Zawsze ustawiaj ID użytkownika na 1
+                recenzja.UzytkownikId = 1;
                 _context.Recenzja.Add(recenzja);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Details", new { id = recenzja.ProduktId });
